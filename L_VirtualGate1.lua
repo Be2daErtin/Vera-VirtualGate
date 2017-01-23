@@ -22,6 +22,8 @@ end
 function readSettings(lul_device)
   local data = {}
 
+  data.status                  = readVariableOrInit(lul_device,SERVICE_ID, "Status", 0)
+
   data.pluginversion           = readVariableOrInit(lul_device,SERVICE_ID, "PluginVersion", PLUGIN_VERSION )
   if (data.pluginversion ~= PLUGIN_VERSION ) then
     luup.variable_set(SERVICE_ID, "PluginVersion", PLUGIN_VERSION, lul_device)
@@ -52,6 +54,7 @@ function Toggle()
   local data = {}
   data = readSettings(Device)
   luup.call_action(SID_SwitchPower1 ,"SetTarget",{ newTargetValue="1" },data.DID_GateController)
+  luup.variable_set(SERVICE_ID, "Status", 1, 75)
   luup.call_action("urn:veramate-com:serviceId:VeraMatePN", "SendAlert", {Msg="GateControl: Toggle"}, data.VID_Notify )
   --return true
 end

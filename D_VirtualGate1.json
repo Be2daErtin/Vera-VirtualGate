@@ -5,7 +5,7 @@
             "img": "garage_door_closed.png",
             "conditions": [
                 {
-                    "service": "urn:upnp-org:serviceId:VirtualGate1",
+                    "service": "urn:upnp-bhomesa-co-za:serviceId:VirtualGate1",
                     "variable": "Status",
                     "operator": "==",
                     "value": 0,
@@ -17,7 +17,7 @@
             "img": "garage_door_open.png",
             "conditions": [
                 {
-                    "service": "urn:upnp-org:serviceId:VirtualGate1",
+                    "service": "urn:upnp-bhomesa-co-za:serviceId:VirtualGate1",
                     "variable": "Status",
                     "operator": "==",
                     "value": 1,
