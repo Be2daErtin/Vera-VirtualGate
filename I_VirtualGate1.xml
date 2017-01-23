@@ -1,0 +1,11 @@
+<implementation>
+  <files>L_VirtualGate1.lua</files>
+  <startup>initialize</startup>
+  <actionList>
+    <action>
+      <serviceId>urn:upnp-bhomesa-co-za:serviceId:VirtualGate1</serviceId>
+      <name>Toggle</name>
+      <run>return Toggle(lul_device, lul_settings)</run>
+    </action>
+  </actionList>
+</implementation>
